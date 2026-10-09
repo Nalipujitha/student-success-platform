@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Analytics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>🎓 CampusAI</h2>
+        <p class="nav active">Dashboard</p>
+        <p class="nav">Student Analytics</p>
+        <p class="nav">Success Insights</p>
+        <div class="sidebar-bottom">
+            Smart Campus<br>Student Success Platform
+        </div>
+    </aside>
+
+    <main class="main">
+        <header>
+            <div>
+                <p class="eyebrow">STUDENT SUCCESS PLATFORM</p>
+                <h1>Campus Dashboard</h1>
+                <p class="subtitle">
+                    Understand performance. Support every student.
+                </p>
+            </div>
+            <span class="live"><span></span> Live data</span>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">OVERVIEW</p>
+                <h2>Every student deserves an opportunity to succeed.</h2>
+                <p>
+                    Explore academic performance, engagement and placement readiness.
+                </p>
+            </div>
+            <div class="welcome-icon">📊</div>
+        </section>
+
+        <section class="stats">
+            <article class="card">
+                <p>Total Students</p>
+                <h2 id="totalStudents">—</h2>
+                <span>Students in dataset</span>
+            </article>
+
+            <article class="card">
+                <p>Average Success Score</p>
+                <h2 id="averageScore">—</h2>
+                <span>Out of 100 points</span>
+            </article>
+
+            <article class="card attention">
+                <p>Needs Attention</p>
+                <h2 id="needsAttention">—</h2>
+                <span>May benefit from support</span>
+            </article>
+
+            <article class="card ontrack">
+                <p>On Track</p>
+                <h2 id="onTrack">—</h2>
+                <span>Meeting score threshold</span>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Student Support Overview</h3>
+                        <p>Distribution by illustrative score category</p>
+                    </div>
+                </div>
+
+                <div id="supportChart" class="chart">
+                    <p>Loading student analytics...</p>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Platform Insights</h3>
+                <p class="muted">Current dataset summary</p>
+
+                <div class="insight">
+                    <span class="insight-icon purple">◎</span>
+                    <div>
+                        <strong id="supportTotal">—</strong>
+                        <p>Students needing support</p>
+                    </div>
+                </div>
+
+                <div class="insight">
+                    <span class="insight-icon green">✓</span>
+                    <div>
+                        <strong id="onTrackInsight">—</strong>
+                        <p>Students on track</p>
+                    </div>
+                </div>
+
+                <div class="note">
+                    These categories are based on demo scoring rules, not validated predictions.
+                </div>
+            </article>
+        </section>
+
+        <section class="panel table-panel">
+            <div class="panel-heading">
+                <div>
+                    <h3>Student Directory</h3>
+                    <p>Review individual performance and support categories</p>
+                </div>
+
+                <input id="searchInput" type="search" placeholder="Search student ID...">
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>CGPA</th>
+                            <th>Attendance</th>
+                            <th>Success Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                        <tr>
+                            <td colspan="5">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="tableMessage" class="muted"></p>
+        </section>
+
+        <!-- Student Recommendations Section -->
+        <section class="panel" id="recommendationsPanel">
+            <h2>Student Recommendations</h2>
+            <p class="muted">
+                Personalized suggestions to help students improve.
+            </p>
+
+            <div class="recommendation-search">
+                <input type="text" id="recommendationStudentId" placeholder="Enter student ID (e.g. STU0001)">
+
+                <button type="button" id="getRecommendationsBtn">
+                    Get Recommendations
+                </button>
+            </div>
+
+            <div id="recommendationsResult" aria-live="polite">
+                <p class="muted">
+                    Enter a student ID to view recommendations.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            Smart Campus Analytics · Educational demo using synthetic data
+        </footer>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
